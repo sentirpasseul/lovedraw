@@ -2,7 +2,7 @@ from django.db import models
 
 class Picture(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название')
-    artist = models.ForeignKey('Artist', null=True, on_delete=models.PROTECT, verbose_name='Художник')
+    content = models.TextField(max_length=50, verbose_name='Описание')
     price = models.FloatField(null=True, blank=True, verbose_name='Цена')
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Опубликовано')
 
@@ -27,13 +27,3 @@ class Style(models.Model):
         verbose_name = 'Стиль'
         ordering = ['style']
 
-class Artist(models.Model):
-    artist = models.CharField(max_length=20, db_index=True, verbose_name='Художник')
-
-    def __str__(self):
-        return self.artist
-
-    class Meta:
-        verbose_name_plural = 'Художники'
-        verbose_name = 'Художник'
-        ordering = ['artist']

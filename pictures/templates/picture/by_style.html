@@ -19,7 +19,7 @@
     {% for picture in pictures %}
     <div>
         <h2>{{ picture.title }}</h2>
-        <p>{{ picture.artist }}</p>
+        <p>{{ picture.content }}</p>
         <p>{{ picture.published|date:"d.m.Y H:i:s" }}</p>
     </div>
     {% endfor %}

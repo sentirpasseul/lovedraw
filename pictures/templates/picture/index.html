@@ -19,7 +19,7 @@
     {% for picture in pictures %}
     <div>
         <h2>{{ picture.title }}</h2>
-        <p>{{ picture.artist }}</p>
+        <p>{{ picture.content }}</p>
         <p><a href="/pictures/{{ picture.style.pk }}/">
             {{ picture.style.style }} </a></p>
         <p><a href="{% url '/pictures/' %}" </p>

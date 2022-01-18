@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='picture',
-            name='artist',
+            name='content',
             field=models.TextField(blank=True, null=True, verbose_name='Автор'),
         ),
         migrations.AlterField(
