@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ current_style.style }} :: Доска с картинами</title>
+</head>
+<body>
+    <h1>Картины</h1>
+    <h2>Стиль: {{ current_style.style }}</h2>
+    <div>
+        <a href="/pictures/">Главная</a>
+        {% for style in styles %}
+        <a href="/pictures/{{ style.pk }}/">{{ style.style }}</a>
+        {% endfor %}
+    </div>
+    {% for picture in pictures %}
+    <div>
+        <h2>{{ picture.title }}</h2>
+        <p>{{ picture.artist }}</p>
+        <p>{{ picture.published|date:"d.m.Y H:i:s" }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
